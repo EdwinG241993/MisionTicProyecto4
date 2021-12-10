@@ -19,13 +19,7 @@ export class Administrador extends Entity {
     type: 'string',
     required: true,
   })
-  apellidoPat: string;
-
-  @property({
-    type: 'string',
-    required: true,
-  })
-  apellidoMat: string;
+  apellidos: string;
 
   @property({
     type: 'string',

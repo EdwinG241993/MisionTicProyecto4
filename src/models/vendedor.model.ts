@@ -20,13 +20,7 @@ export class Vendedor extends Entity {
     type: 'string',
     required: true,
   })
-  apellidoPat: string;
-
-  @property({
-    type: 'string',
-    required: true,
-  })
-  apellidoMat: string;
+  apellidos: string;
 
   @property({
     type: 'string',
@@ -42,21 +36,21 @@ export class Vendedor extends Entity {
 
   @property({
     type: 'string',
+    required: true,
+  })
+  telFijo: string;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
+  telMovil: string;
+
+  @property({
+    type: 'string',
     required: false,
   })
   clave: string;
-
-  @property({
-    type: 'string',
-    required: true,
-  })
-  telefono: string;
-
-  @property({
-    type: 'string',
-    required: true,
-  })
-  telefonoMovil: string;
 
   @property({
     type: 'string',

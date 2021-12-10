@@ -1,3 +1,4 @@
+import {authenticate} from '@loopback/authentication';
 import {service} from '@loopback/core';
 import {
   Count,
@@ -80,7 +81,7 @@ export class AdministradorController {
     //Notificacion al Admin
     let destino = administrador.correoElec;
     let asunto = "Registro Administradores";
-    let contenido = `Hola ${administrador.nombres}, su nombre de usuario es: ${administrador.correoElec}, y su contraseña asignada es ${clave}`;
+    let contenido = `Hola ${administrador.nombres}, su nombre de usuario es: ${administrador.correoElec}, y su contraseña asignada es ${clave}, posee el rol de Administrador`;
     fetch(`${Llaves.urlServicioNotificaciones}/email?correo_destino=${destino}&asunto=${asunto}&contenido=${contenido}`).then((data: any) => {
       console.log(data);
     })
@@ -98,6 +99,7 @@ export class AdministradorController {
     return this.administradorRepository.count(where);
   }
 
+  @authenticate.skip() //Salta la autenticacion por tk
   @get('/administradors')
   @response(200, {
     description: 'Array of Administrador model instances',
@@ -135,6 +137,7 @@ export class AdministradorController {
     return this.administradorRepository.updateAll(administrador, where);
   }
 
+  @authenticate.skip()
   @get('/administradors/{id}')
   @response(200, {
     description: 'Administrador model instance',
@@ -180,6 +183,7 @@ export class AdministradorController {
     await this.administradorRepository.replaceById(id, administrador);
   }
 
+  @authenticate.skip()
   @del('/administradors/{id}')
   @response(204, {
     description: 'Administrador DELETE success',
