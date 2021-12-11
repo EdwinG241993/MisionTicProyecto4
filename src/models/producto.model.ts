@@ -34,19 +34,19 @@ export class Producto extends Entity {
     type: 'number',
     required: true,
   })
-  peso: number;
-
-  @property({
-    type: 'number',
-    required: true,
-  })
   existencias: number;
 
   @property({
-    type: 'number',
+    type: 'string',
     required: true,
   })
-  activado: number;
+  disponible: string;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
+  imagen: string;
 
   @belongsTo(() => DetalleVenta)
   detalleVentaId: string;
