@@ -54,6 +54,12 @@ export class Vendedor extends Entity {
 
   @property({
     type: 'string',
+    required: false,
+  })
+  rol: "Vendedor";
+
+  @property({
+    type: 'string',
   })
   ventaId?: string;
 

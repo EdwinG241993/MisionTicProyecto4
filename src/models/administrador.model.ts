@@ -51,6 +51,12 @@ export class Administrador extends Entity {
   })
   clave: string;
 
+  @property({
+    type: 'string',
+    required: false,
+  })
+  rol: "Administrador";
+
   // Define well-known properties here
 
   // Indexer property to allow additional data

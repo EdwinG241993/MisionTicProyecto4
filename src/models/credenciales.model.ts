@@ -14,7 +14,6 @@ export class Credenciales extends Model {
   })
   clave: string;
 
-
   constructor(data?: Partial<Credenciales>) {
     super(data);
   }

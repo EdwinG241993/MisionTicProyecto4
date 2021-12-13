@@ -20,25 +20,13 @@ export class Cliente extends Entity {
     type: 'string',
     required: true,
   })
-  apellidosPat: string;
-
-  @property({
-    type: 'string',
-    required: true,
-  })
-  apellidosMat: string;
+  apellidos: string;
 
   @property({
     type: 'string',
     required: true,
   })
   correoElec: string;
-
-  @property({
-    type: 'string',
-    required: true,
-  })
-  usuario: string;
 
   @property({
     type: 'string',
