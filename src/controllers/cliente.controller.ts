@@ -51,7 +51,7 @@ export class ClienteController {
     //Notificacion al cliente
     let destino = cliente.correoElec;
     let asunto = "Registro Tienda Virtual";
-    let contenido = `Hola ${cliente.nombres}, su nombre de usuario es: ${cliente.correoElec}, y su contraseña asignada es ${clave}`;
+    let contenido = `Hola ${cliente.nombres}, ya estas registrado en nuestra tienda su nombre de usuario es: ${cliente.correoElec}, y su contraseña asignada es ${clave}`;
     fetch(`http://127.0.0.1:5000/email?correo_destino=${destino}&asunto=${asunto}&contenido=${contenido}`).then((data: any) => {
       console.log(data);
     })

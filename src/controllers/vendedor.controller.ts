@@ -54,7 +54,7 @@ export class VendedorController {
     //Notificacion al Admin
     let destino = vendedor.correoElec;
     let asunto = "Registro Vendedores";
-    let contenido = `Hola ${vendedor.nombres}, ya haces parte de nuestra organizacion su nombre de usuario es: ${vendedor.correoElec}, y su contraseña asignada es ${clave}`;
+    let contenido = `Hola ${vendedor.nombres}, ya haces parte de nuestra organizacion su nombre de usuario es: ${vendedor.correoElec}, y su contraseña asignada es: ${clave} tienes el rol de Vendedor`;
     fetch(`${Llaves.urlServicioNotificaciones}/email?correo_destino=${destino}&asunto=${asunto}&contenido=${contenido}`).then((data: any) => {
       console.log(data);
     })
